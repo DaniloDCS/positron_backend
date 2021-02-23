@@ -3,9 +3,10 @@ require("dotenv").config()
 const express = require("express")
 const app = express()
 const bp = require("body-parser")
-const port = process.env.PORT
+const port = process.env.PORT || 3333
+const expressLayouts = require("express-ejs-layouts")
+const faker = require("faker")
 
-//const { User } = require("./models")
 
 const firebase = require("firebase")
 const Auth = require("./firebase")
@@ -15,8 +16,12 @@ firebase.auth().onAuthStateChanged(user => {
     user ? userLogged = user : userLogged = null
 })
 
+app.use(expressLayouts)
 app.use(bp.json())
 app.use(bp.urlencoded())
+app.use(express.static(__dirname + "/frontend/src/"))
+app.use(express.static('node_modules/'));
+app.set("view engine", "ejs")
 
 app.all('*', (req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -24,6 +29,20 @@ app.all('*', (req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
+
+app.get("/", (req, res) => {
+    res.render('pages/dashboard')
+})
+
+app.get("/signin", (req, res) => {
+    res.render('pages/signin')
+})
+
+app.get("/signup", (req, res) => {
+    res.render('pages/signup')
+})
+
+
 
 app.post("/signup", (req, res) => {
     var { email, password } = req.body

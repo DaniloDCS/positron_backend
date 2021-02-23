@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="/styles/signup.css">
+<div class="content">
+    <form method="post">
+        <h2 class="title">
+            <i class="fas fa-user-edit"></i>
+            Cadastrato de Usuário
+            <i class="fas fa-cog"></i>
+        </h2>
+        <div class="row">
+            <input type="text" id="firstName" name="firstName" required>
+            <label for="firstName">
+                <i class="far fa-user"></i>
+                Primeiro Nome
+            </label>
+        </div>
+        <div class="row">
+            <input type="text" id="lastName" name="lastName" required>
+            <label for="lastName">
+                <i class="fas fa-user-tag"></i>
+                Último Nome
+            </label>
+        </div>
+        <div class="row">
+            <input type="text" id="email" name="email" required>
+            <label for="email">
+                <i class="fas fa-envelope"></i>
+                Email
+            </label>
+        </div>
+        <div class="row">
+            <input type="text" id="tel" name="tel" required>
+            <label for="tel">
+                <i class="fas fa-mobile-alt"></i>
+                Telefone
+            </label>
+        </div>
+        <div class="group">
+            <div class="row">
+                <input type="password" id="password" name="password" required>
+                <label for="password">
+                    <i class="fas fa-lock"></i>
+                    Senha
+                </label>
+            </div>
+            <div class="row">
+                <input type="password" id="passwordConfirm" name="passwordConfirm" required>
+                <label for="passwordConfirm">
+                    <i class="fas fa-lock"></i>
+                    Confirme sua Senha
+                </label>
+            </div>
+        </div>
+        <button class="btn" type="submit">Crirar conta</button>
+        <label class="login">
+            <i class="fas fa-question-circle"></i>
+            Já tem login?
+            <a href="/signin">Fazer login?</a>
+        </label>
+        <h3>Outra formas de fazer Login</h3>
+        <div class="row d-flex">
+            <a href="" class="link bg-git">
+                <i class="fab fa-github"></i>
+                <span>Git Hub</span>
+            </a>
+            <a href="" class="link bg-google">
+                <i class="fab fa-google"></i>
+                <span>Google</span>
+            </a>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,102 @@
+@media (min-width: 500px) {
+    .content {
+        width: 490px;
+    }
+}    
+@media (min-width: 1100px) {
+    .content {
+        width: 600px;
+    }
+}
+body {
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+.form {
+    background-color: white;
+    padding: 20px 10px;
+    filter: drop-shadow(0 0 30px #333);
+    border-radius: 8px;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.row {
+    padding: 5px 20px;
+}
+.row input {
+    width: 100%;
+    height: 40px;
+}
+img {
+    width: 160px;
+    height: 160px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row {
+    height: 60px;
+}
+input {
+    outline: none;
+    font-size: 20px;
+    border: none;
+    border-bottom: 3px solid black;
+}
+label {
+    display: flex;
+    width: 100%;
+    font-weight: 600;
+    transform: translateY(-25px);
+}
+label i, .link i {
+    margin-right: 5px;
+}
+input:focus ~ label, input:valid ~ label {
+    transition: 1s;
+    transform: translateY(-55px);
+    font-size: 14px;
+}
+.link {
+    display: inline-flex;
+    width: 48%;
+    height: 35px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+    border: 1px solid black;
+    font-weight: 600;
+    font-size: small;
+}
+.d-flex {
+    display: flex;
+}
+.acess {
+    display: flex;
+    width: 50%;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    background-color: black;
+    color: white;
+    border-color: black;
+    outline: none;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.acess:hover {
+    background: rgb(0, 0, 0, 0.8);
+    border-color: rgb(0, 0, 0, 0.8);
+}

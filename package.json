@@ -4,8 +4,14 @@
   "description": "BackEnd for Positron Technology",
   "main": "server.js",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2",
     "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "faker": "^5.4.0",
     "firebase": "^8.2.9",
     "sequelize": "^6.5.0"
   },

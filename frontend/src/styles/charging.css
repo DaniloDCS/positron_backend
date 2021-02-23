@@ -1,0 +1,31 @@
+@media (min-width: 500px) {
+    .dashboard {
+        width: 60%;
+        height: 60%;
+    }
+}
+@media (min-width: 1100px) {
+    .dashboard {
+        width: 50%;
+        height: 50%;
+    }
+}
+html {
+    width: 99%;
+    height: 98.9%;
+}
+body, video {
+    width: 100%;
+    height: 100%;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
+.dashboard {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}

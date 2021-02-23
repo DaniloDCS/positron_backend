@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/styles/signin.css">
+<div class="content">
+    <img src="/images/icon.jpg">
+    <form ng-submit="signIn(login)" method="post" class="form">
+        <h2>Bem-vindo ao Positron Thecnology</h2>
+        <div class="row">
+            <input id="email" name="email" ng-model="login.email" type="text" required>
+            <label for="email">
+                <i class="fas fa-envelope"></i>
+                Usuário
+            </label>
+        </div>
+        <div class="row">
+            <input id="password" name="password" ng-model="login.password" type="password" required>
+            <label for="password">
+                <i class="fas fa-lock"></i>
+                Senha
+            </label>
+        </div>
+        <button class="acess" type="submit">Logar</button>
+        <div class="row d-flex">
+            <a href="/forgout" class="link">
+                <i class="fas fa-question-circle"></i>
+                Esqueceu a senha?
+            </a>
+            <a href="/signup" class="link">
+                <i class="fas fa-user"></i> Registre-se?
+            </a>
+        </div>
+    </form>
+</div>
