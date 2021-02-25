@@ -133,7 +133,7 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: large;
+    font-size: small;
     font-weight: 600;
     border-radius: 5px;
     color: white;
@@ -145,21 +145,21 @@ button:hover {
 .dev {
     margin-top: 6px;
     border-top: 1px solid #000;
-    font-size: larger;
+    font-size: large;
     text-align: center;
     padding: 10px;
 }
 .dev div {
     margin-top: 10px;
 }
-.btn-git , .btn-ins {
+.btn-git, .btn-ins {
     width: 40%;
     text-decoration: none;
     color: white;
     padding: 6px;
     margin: 6px;
     border-radius: 5px;
-    font-size: smaller;
+    font-size: small;
 }
 .btn-git {
     background-color: black;

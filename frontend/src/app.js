@@ -6,7 +6,7 @@ angular
 
         $scope.userMail = sessionStorage.getItem("email") || ""
         $scope.userUsername = sessionStorage.getItem("username") || "Anônimo"
-        
+
         $scope.exit = () => {
             sessionStorage.clear()
             window.location.href = "/signin"
@@ -33,7 +33,7 @@ angular
                         sessionStorage.setItem("email", res.data.user.email)
                         $scope.userMail = sessionStorage.getItem("email")
                         $scope.userUsername = sessionStorage.getItem("username")
-                        window.location.href  = "/"
+                        window.location.href = "/"
                     } else {
                         window.location.href = "/signin"
                         $scope.alertErrLogin = true
