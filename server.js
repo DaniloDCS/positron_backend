@@ -42,8 +42,6 @@ app.get("/signup", (req, res) => {
     res.render('pages/signup')
 })
 
-
-
 app.post("/signup", (req, res) => {
     var { displayName, email, password, phoneNumber } = req.body
 
@@ -66,7 +64,12 @@ app.post("/signin", (req, res) => {
     if (email && password) {
         Auth.SignInWithEmailAndPassword(email, password)
             .then(user => {
-                user.err ? res.send("Error") : userLogged = true ; res.json(user)
+                if (user.err) {
+                    res.send("Error")
+                } else { 
+                    userLogged = true
+                    res.json(user)
+                }
             })
             .catch(err => {
                 res.json(err)
