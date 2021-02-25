@@ -31,7 +31,7 @@ app.all('*', (req, res, next) => {
 });
 
 app.get("/", (req, res) => {
-    userLogged === true ? res.render('pages/dashboard') : res.redirect('/')
+    userLogged === true ? res.render('pages/dashboard') : res.redirect('/signin')
 })
 
 app.get("/signin", (req, res) => {
