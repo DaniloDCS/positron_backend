@@ -1,5 +1,5 @@
 angular
-    .module("positron", [])
+    .module("positron", ["ngRoute"])
     .controller("positronCtrl", ($scope, $http, $interval) => {
         $scope.viewMenu = false;
         $scope.alertErrLogin = false

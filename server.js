@@ -1,13 +1,9 @@
 require("dotenv").config()
-
 const express = require("express")
 const app = express()
 const bp = require("body-parser")
 const port = process.env.PORT || 3333
 const expressLayouts = require("express-ejs-layouts")
-const faker = require("faker")
-
-
 const firebase = require("firebase")
 const Auth = require("./firebase")
 var userLogged = null;
@@ -45,7 +41,7 @@ app.get("/signup", (req, res) => {
 app.post("/signup", (req, res) => {
     var { displayName, email, password, phoneNumber } = req.body
 
-    if (displayName && email && password && phoneNumber) {
+    if ( displayName && email && password && phoneNumber ) {
         Auth.SignUpWithEmailAndPassword(displayName, email, password, phoneNumber)
             .then(user => {
                 user.err ? res.send("Error") : res.json(user)
@@ -66,7 +62,7 @@ app.post("/signin", (req, res) => {
             .then(user => {
                 if (user.err) {
                     res.send("Error")
-                } else {
+                } else { 
                     userLogged = true
                     res.json(user)
                 }

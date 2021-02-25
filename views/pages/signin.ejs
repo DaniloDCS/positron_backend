@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="/styles/signin.css">
 <div class="content" ng-controller="positronCtrl">
-    <img src="/images/charging.gif" autoplay loop class="icon"></img>
+    <img src="/images/charging.gif" class="icon"></img>
     <form method="post" class="form" ng-submit="signIn(user)">
         <h1 class="title">Bem-vindo ao sistema da Positron Technology! </h1>
         <div class="form-group">
             <input type="text" name="email" id="email" ng-model="user.email" required>
             <label for="email">
                 <i class="fas fa-envelope"></i>
-                Usuário
+                Usuário 
             </label>
         </div>
         <div class="form-group">
