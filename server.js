@@ -31,7 +31,7 @@ app.all('*', (req, res, next) => {
 });
 
 app.get("/", (req, res) => {
-    res.render('pages/dashboard')
+    userLogged === true ? res.render('pages/dashboard') : res.redirect('/')
 })
 
 app.get("/signin", (req, res) => {
@@ -45,10 +45,10 @@ app.get("/signup", (req, res) => {
 
 
 app.post("/signup", (req, res) => {
-    var { email, password } = req.body
+    var { displayName, email, password, phoneNumber } = req.body
 
-    if ( email && password ) {
-        Auth.SignUpWithEmailAndPassword(email, password)
+    if ( displayName && email && password && phoneNumber ) {
+        Auth.SignUpWithEmailAndPassword(displayName, email, password, phoneNumber)
             .then(user => {
                 user.err ? res.send("Error") : res.json(user)
             })
@@ -66,7 +66,7 @@ app.post("/signin", (req, res) => {
     if (email && password) {
         Auth.SignInWithEmailAndPassword(email, password)
             .then(user => {
-                user.err ? res.send("Error") : res.json(user)
+                user.err ? res.send("Error") : userLogged = true ; res.json(user)
             })
             .catch(err => {
                 res.json(err)

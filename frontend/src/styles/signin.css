@@ -1,102 +1,174 @@
-@media (min-width: 500px) {
+@media (min-width: 550px) {
     .content {
-        width: 490px;
+        width: 90%;
     }
-}    
-@media (min-width: 1100px) {
+}
+@media (min-width: 730px) {
     .content {
-        width: 600px;
+        width: 70%;
     }
+}
+@media (min-width: 1000px) {
+    .content {
+        width: 40%;
+    }
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+html {
+    height: max-content;
 }
 body {
     background-color: black;
+    margin: 0px;
     font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
 }
-.form {
-    background-color: white;
-    padding: 20px 10px;
-    filter: drop-shadow(0 0 30px #333);
-    border-radius: 8px;
+.content {
+    background-color: black;
+    margin: 20px auto;
 }
-h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-.row {
-    padding: 5px 20px;
-}
-.row input {
-    width: 100%;
-    height: 40px;
-}
-img {
-    width: 160px;
-    height: 160px;
+.icon {
     display: flex;
     margin-left: auto;
     margin-right: auto;
+    width: 200px;
+    height: 200px;
 }
-.row {
-    height: 60px;
+.form {
+    background-color: black;
+    padding: 20px;
+    color: white;
+}
+.title {
+    text-align: center;
+    margin: 10px 0px 40px 0px;
+    padding: 0px 10px;
+}
+.form-group {
+    padding: 6px 20px;
+    margin-top: 8px;
+}
+input, button {
+    font-size: larger;
+    font-weight: 600;
+    outline: none;
 }
 input {
-    outline: none;
-    font-size: 20px;
-    border: none;
-    border-bottom: 3px solid black;
+    width: 98%;
+    display: block;
+    height: 40px;
+    border-width: 0px;
+    border-bottom: 3px solid;
+    background-color: rgb(255, 255, 255, 0.2);
+    text-indent: 10px;
+    color: white;
 }
 label {
     display: flex;
     width: 100%;
+    font-size: larger;
     font-weight: 600;
-    transform: translateY(-25px);
+    transform: translateY(-33px);
+    padding-left: 10px;
 }
-label i, .link i {
-    margin-right: 5px;
+label i {
+    margin-right: 6px;
 }
 input:focus ~ label, input:valid ~ label {
-    transition: 1s;
-    transform: translateY(-55px);
-    font-size: 14px;
+    padding-left: 2px;
+    transform: 0.6s;
+    transform: translateY(-70px);
 }
-.link {
-    display: inline-flex;
-    width: 48%;
-    height: 35px;
-    align-items: center;
+button {
+    display: flex;
     justify-content: center;
-    margin-left: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    background-color: transparent;
+    align-items: center;
+    width: 60%;
+    height: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+    font-size: large;
+    border: 2px solid;
+}
+button i {
+    margin-right: 10px;
+}
+button:hover {
+    background-color: white;
     color: black;
-    border: 1px solid black;
-    font-weight: 600;
-    font-size: small;
+    border: 2px solid;
+}
+.alert {
+    width: 91.5%;
+    height: 30px;
+    background-color: rgb(238, 148, 148);
+    color: red;
+    display: flex;
+    align-items: center;
+    margin: -10px auto 10px auto;
+    font-size: larger;
+    padding: 6px;
+    border-radius: 6px;
+    font-weight: bolder;
+}
+.alert i {
+    margin-right: 6px;
 }
 .d-flex {
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10px;
 }
-.acess {
+.btn-link {
+    width: 45%;
+    height: 30px;
+    text-decoration: none;
+    border: 1px solid;
     display: flex;
-    width: 50%;
-    height: 40px;
-    margin-left: auto;
-    margin-right: auto;
     align-items: center;
     justify-content: center;
-    border-radius: 100px;
-    background-color: black;
-    color: white;
-    border-color: black;
-    outline: none;
-    margin-bottom: 20px;
+    font-size: large;
     font-weight: 600;
+    border-radius: 5px;
+    color: white;
 }
-.acess:hover {
-    background: rgb(0, 0, 0, 0.8);
-    border-color: rgb(0, 0, 0, 0.8);
+
+.btn-link i, .btn-git i, .btn-ins i {
+    margin-right: 6px;
+}
+.dev {
+    margin-top: 6px;
+    border-top: 1px solid #000;
+    font-size: larger;
+    text-align: center;
+    padding: 10px;
+}
+.dev div {
+    margin-top: 10px;
+}
+.btn-git , .btn-ins {
+    width: 40%;
+    text-decoration: none;
+    color: white;
+    padding: 6px;
+    margin: 6px;
+    border-radius: 5px;
+    font-size: smaller;
+}
+.btn-git {
+    background-color: black;
+    border: 1px solid;
+}
+.btn-ins {
+    background-color: rgb(219, 8, 43);
+}
+.btn-git i, .btn-ins i {
+    border-right: 1px solid;
+    padding-right: 6px;
 }

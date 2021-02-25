@@ -1,186 +1,197 @@
 <link rel="stylesheet" href="/styles/dashboard.css">
-<nav class="menu">
-    <div class="items">
-        <div class="title">
-            <img class="icon-course" src="/images/icon.jpg" alt="">
-            <h3 class="cas">Positron Technology</h3>
-        </div>
-        <div class="settings">
-            <div class="me">
-                <img class="icon-user" src="/images/icon.jpg" alt="">
-                <div class="user">
-                    <h4>Danilo Costa</h4>
-                    <h6>danillo.ifpb@gmail.com</h6>
-                </div>
+<div ng-controller="positronCtrl">
+    <nav class="menu">
+        <div class="items">
+            <div class="title">
+                <img class="icon-course" src="/images/icon.jpg" alt="">
+                <h3 class="cas">Positron Technology </h3>
             </div>
-            <i class="far fa-bell"></i>
-            <i class="fas fa-power-off"></i>
+            <div class="settings">
+                <div class="me" ng-click="viewMenu = 'true' ">
+                    <img class="icon-user" src="/images/icon.jpg" alt="">
+                    <div class="user">
+                        <h4>{{userUsername}}</h4>
+                        <h6>{{userMail}}</h6>
+                    </div>
+                </div>
+                <i class="far fa-bell"></i>
+                <i class="fas fa-power-off" ng-click="exit()"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="flooter" ng-show="viewMenu == 'true'">
+        <span class="angle">
+            <i class="fas fa-sort-up"></i>
+        </span>
+        <div class="list">
+            <div class="list-item" ng-click="viewMenu = 'false'">
+                <i class="fas fa-angle-right"></i>
+                <i class="fas fa-user-tie"></i>
+                Meus Dados
+            </div>
+            <div class="list-item" ng-click="viewMenu = 'false'">
+                <i class="fas fa-angle-right"></i>
+                <i class="fas fa-users"></i>
+                Meus Cursos
+            </div>
+            <div class="list-item" ng-click="viewMenu = 'false'">
+                <i class="fas fa-angle-right"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                Sobre a Positron
+            </div>
+            <div class="list-item" ng-click="viewMenu = 'false'">
+                <i class="fas fa-angle-right"></i>
+                <i class="fas fa-question-circle"></i>
+                Ajuda
+            </div>
+            <div class="list-item" ng-click="viewMenu = 'false' ; exit()">
+                <i class="fas fa-angle-right"></i>
+                <i class="fas fa-power-off"></i>
+                Sair
+            </div>
         </div>
     </div>
-</nav>
-<div class="flooter">
-    <span class="angle">
-        <i class="fas fa-sort-up"></i>
-    </span>
-    <div class="list">
-        <div class="list-item">
-            <i class="fas fa-angle-right"></i>
-            <i class="fas fa-user-tie"></i>
-            Meus Dados
-        </div>
-        <div class="list-item">
-            <i class="fas fa-angle-right"></i>
-            <i class="fas fa-users"></i>
-            Meus Cursos
-        </div>
-        <div class="list-item">
-            <i class="fas fa-angle-right"></i>
-            <i class="fas fa-exclamation-circle"></i>
-            Sobre a Positron
-        </div>
-        <div class="list-item">
-            <i class="fas fa-angle-right"></i>
-            <i class="fas fa-question-circle"></i>
-            Ajuda
-        </div>
-        <div class="list-item">
-            <i class="fas fa-angle-right"></i>
-            <i class="fas fa-power-off"></i>
-            Sair
-        </div>
-    </div>
-</div>
-<div class="dash">
-    <div class="row-group">
-        <div class="row mt">
-            <div class="col">
-                <img class="icon-course" src="/images/icon.jpg" alt="">
-                <div class="about-course">
-                    <h4>Titulo do Curso</h4>
-                    <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
-                        officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
-                        reprehenderit vitae. Fugiat amet sint explicabo.</h6>
-                    <div>
-                        <strong>16 Aulas</strong>
-                        <span> <i>0%</i> Concluídos</span>
+    <div class="dash">
+        <div class="row-group">
+            <div class="row">
+                <div class="col">
+                    <img class="icon-course" src="/images/icon.jpg" alt="">
+                    <div class="about-course">
+                        <h4>Titulo do Curso</h4>
+                        <h6 class="title-course">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
+                            officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
+                            reprehenderit vitae. Fugiat amet sint explicabo.
+                        </h6>
+                        <div>
+                            <strong>16 Aulas</strong>
+                            <span> <i>0%</i> Concluídos</span>
+                        </div>
+                        <div class="bar"></div>
                     </div>
-                    <div class="bar"></div>
+                </div>
+                <div class="col">
+                    <img class="icon-course" src="/images/icon.jpg" alt="">
+                    <div class="about-course">
+                        <h4>Titulo do Curso</h4>
+                        <h6 class="title-course">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
+                            officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
+                            reprehenderit vitae. Fugiat amet sint explicabo.
+                        </h6>
+                        <div>
+                            <strong>16 Aulas</strong>
+                            <span> <i>0%</i> Concluídos</span>
+                        </div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img class="icon-course" src="/images/icon.jpg" alt="">
+                    <div class="about-course">
+                        <h4>Titulo do Curso</h4>
+                        <h6 class="title-course">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
+                            officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
+                            reprehenderit vitae. Fugiat amet sint explicabo.
+                        </h6>
+                        <div>
+                            <strong>16 Aulas</strong>
+                            <span> <i>0%</i> Concluídos</span>
+                        </div>
+                        <div class="bar"></div>
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <img class="icon-course" src="/images/icon.jpg" alt="">
-                <div class="about-course">
-                    <h4>Titulo do Curso</h4>
-                    <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
-                        officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
-                        reprehenderit vitae. Fugiat amet sint explicabo.</h6>
-                    <div>
-                        <strong>16 Aulas</strong>
-                        <span> <i>0%</i> Concluídos</span>
+            <div class="row">
+                <div class="col">
+                    <img class="icon-course" src="/images/icon.jpg" alt="">
+                    <div class="about-course">
+                        <h4>Titulo do Curso</h4>
+                        <h6 class="title-course">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
+                            officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
+                            reprehenderit vitae. Fugiat amet sint explicabo.
+                        </h6>
+                        <div>
+                            <strong>16 Aulas</strong>
+                            <span> <i>0%</i> Concluídos</span>
+                        </div>
+                        <div class="bar"></div>
                     </div>
-                    <div class="bar"></div>
+                </div>
+                <div class="col">
+                    <img class="icon-course" src="/images/icon.jpg" alt="">
+                    <div class="about-course">
+                        <h4>Titulo do Curso</h4>
+                        <h6 class="title-course">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
+                            officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
+                            reprehenderit vitae. Fugiat amet sint explicabo.
+                        </h6>
+                        <div>
+                            <strong>16 Aulas</strong>
+                            <span> <i>0%</i> Concluídos</span>
+                        </div>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+                <div class="col">
+                    <img class="icon-course" src="/images/icon.jpg" alt="">
+                    <div class="about-course">
+                        <h4>Titulo do Curso</h4>
+                        <h6 class="title-course">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
+                            officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
+                            reprehenderit vitae. Fugiat amet sint explicabo.
+                        </h6>
+                        <div>
+                            <strong>16 Aulas</strong>
+                            <span> <i>0%</i> Concluídos</span>
+                        </div>
+                        <div class="bar"></div>
+                    </div>
                 </div>
             </div>
-            <div class="col">
-                <img class="icon-course" src="/images/icon.jpg" alt="">
-                <div class="about-course">
-                    <h4>Titulo do Curso</h4>
-                    <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
-                        officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
-                        reprehenderit vitae. Fugiat amet sint explicabo.</h6>
-                    <div>
-                        <strong>16 Aulas</strong>
-                        <span> <i>0%</i> Concluídos</span>
+            <div class="row">
+                <div class="col">
+                    <img class="icon-course" src="/images/icon.jpg" alt="">
+                    <div class="about-course">
+                        <h4>Titulo do Curso</h4>
+                        <h6 class="title-course">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
+                            officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
+                            reprehenderit vitae. Fugiat amet sint explicabo.
+                        </h6>
+                        <div>
+                            <strong>16 Aulas</strong>
+                            <span> <i>0%</i> Concluídos</span>
+                        </div>
+                        <div class="bar"></div>
                     </div>
-                    <div class="bar"></div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <img class="icon-course" src="/images/icon.jpg" alt="">
-                <div class="about-course">
-                    <h4>Titulo do Curso</h4>
-                    <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
-                        officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
-                        reprehenderit vitae. Fugiat amet sint explicabo.</h6>
-                    <div>
-                        <strong>16 Aulas</strong>
-                        <span> <i>0%</i> Concluídos</span>
+                <div class="col">
+                    <img class="icon-course" src="/images/icon.jpg" alt="">
+                    <div class="about-course">
+                        <h4>Titulo do Curso</h4>
+                        <h6 class="title-course">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
+                            officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
+                            reprehenderit vitae. Fugiat amet sint explicabo.
+                        </h6>
+                        <div>
+                            <strong>16 Aulas</strong>
+                            <span> <i>0%</i> Concluídos</span>
+                        </div>
+                        <div class="bar"></div>
                     </div>
-                    <div class="bar"></div>
                 </div>
-            </div>
-            <div class="col">
-                <img class="icon-course" src="/images/icon.jpg" alt="">
-                <div class="about-course">
-                    <h4>Titulo do Curso</h4>
-                    <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
-                        officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
-                        reprehenderit vitae. Fugiat amet sint explicabo.</h6>
-                    <div>
-                        <strong>16 Aulas</strong>
-                        <span> <i>0%</i> Concluídos</span>
+                <div class="col">
+                    <img class="icon-course" src="/images/icon.jpg" alt="">
+                    <div class="about-course">
+                        <h4>Titulo do Curso</h4>
+                        <h6 class="title-course">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
+                            officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
+                            reprehenderit vitae. Fugiat amet sint explicabo.
+                        </h6>
+                        <div>
+                            <strong>16 Aulas</strong>
+                            <span> <i>0%</i> Concluídos</span>
+                        </div>
+                        <div class="bar"></div>
                     </div>
-                    <div class="bar"></div>
-                </div>
-            </div>
-            <div class="col">
-                <img class="icon-course" src="/images/icon.jpg" alt="">
-                <div class="about-course">
-                    <h4>Titulo do Curso</h4>
-                    <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
-                        officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
-                        reprehenderit vitae. Fugiat amet sint explicabo.</h6>
-                    <div>
-                        <strong>16 Aulas</strong>
-                        <span> <i>0%</i> Concluídos</span>
-                    </div>
-                    <div class="bar"></div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <img class="icon-course" src="/images/icon.jpg" alt="">
-                <div class="about-course">
-                    <h4>Titulo do Curso</h4>
-                    <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
-                        officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
-                        reprehenderit vitae. Fugiat amet sint explicabo.</h6>
-                    <div>
-                        <strong>16 Aulas</strong>
-                        <span> <i>0%</i> Concluídos</span>
-                    </div>
-                    <div class="bar"></div>
-                </div>
-            </div>
-            <div class="col">
-                <img class="icon-course" src="/images/icon.jpg" alt="">
-                <div class="about-course">
-                    <h4>Titulo do Curso</h4>
-                    <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
-                        officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
-                        reprehenderit vitae. Fugiat amet sint explicabo.</h6>
-                    <div>
-                        <strong>16 Aulas</strong>
-                        <span> <i>0%</i> Concluídos</span>
-                    </div>
-                    <div class="bar"></div>
-                </div>
-            </div>
-            <div class="col">
-                <img class="icon-course" src="/images/icon.jpg" alt="">
-                <div class="about-course">
-                    <h4>Titulo do Curso</h4>
-                    <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam natus necessitatibus possimus
-                        officiis hic est cupiditate quod vero deleniti, enim voluptatibus ea ullam obcaecati,
-                        reprehenderit vitae. Fugiat amet sint explicabo.</h6>
-                    <div>
-                        <strong>16 Aulas</strong>
-                        <span> <i>0%</i> Concluídos</span>
-                    </div>
-                    <div class="bar"></div>
                 </div>
             </div>
         </div>

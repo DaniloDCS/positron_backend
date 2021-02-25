@@ -13,9 +13,16 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-module.exports.SignUpWithEmailAndPassword = (email, password) => {
-    return firebase.auth().createUserWithEmailAndPassword(email, password)
+module.exports.SignUpWithEmailAndPassword = (displayname, email, password, phoneNumber) => {
+    firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(user => {
+        var user = firebase.auth().currentUser;
+
+        user.updateProfile({
+            displayName: displayname,
+            phoneNumber: phoneNumber
+        })
+           
         return JSON.stringify(user)
     })
     .catch(error => {

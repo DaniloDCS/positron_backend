@@ -1,31 +1,51 @@
 <link rel="stylesheet" href="/styles/signin.css">
-<div class="content">
-    <img src="/images/icon.jpg">
-    <form ng-submit="signIn(login)" method="post" class="form">
-        <h2>Bem-vindo ao Positron Thecnology</h2>
-        <div class="row">
-            <input id="email" name="email" ng-model="login.email" type="text" required>
+<div class="content" ng-controller="positronCtrl">
+    <video src="/images/charging.mp4" autoplay loop class="icon"></video>
+    <form method="post" class="form" ng-submit="signIn(user)">
+        <h1 class="title">Bem-vindo ao sistema da Positron Technology! </h1>
+        <div class="form-group">
+            <input type="text" name="email" id="email" ng-model="user.email" required>
             <label for="email">
                 <i class="fas fa-envelope"></i>
                 Usuário
             </label>
         </div>
-        <div class="row">
-            <input id="password" name="password" ng-model="login.password" type="password" required>
+        <div class="form-group">
+            <input type="password" name="password" id="password" ng-model="user.password" required>
             <label for="password">
                 <i class="fas fa-lock"></i>
                 Senha
             </label>
         </div>
-        <button class="acess" type="submit">Logar</button>
-        <div class="row d-flex">
-            <a href="/forgout" class="link">
+        <span class="alert" ng-show="alertErrLogin == true ">
+            <i class="fas fa-times-circle"></i>
+            Usuário ou senha incorretos!
+        </span>
+        <button type="submit">
+            <i class="fas fas fa-sign-in-alt"></i>
+            Acessar
+        </button>
+        <div class="form-group d-flex">
+            <a class="btn-link" href="/forgout">
                 <i class="fas fa-question-circle"></i>
                 Esqueceu a senha?
             </a>
-            <a href="/signup" class="link">
-                <i class="fas fa-user"></i> Registre-se?
+            <a class="btn-link" href="/signup">
+                <i class="fas fa-user-circle"></i>
+                Registrar-se?
             </a>
+        </div>
+        <div class="dev">
+            <span>Desenvolvimento</span> | Positron Technology
+            <div>
+                <a class="btn-git" href="https://github.com/danilodcs" target="_blank">
+                    <i class="fab fa-github"></i> DaniloDCS
+                </a>
+                <a class="btn-ins" href="https://instagram.com/positrontechnology" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                    Positron Technology
+                </a>
+            </div>
         </div>
     </form>
 </div>
