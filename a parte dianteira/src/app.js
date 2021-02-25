@@ -28,6 +28,7 @@ angular
                 }
             })
                 .then((res) => {
+                    alert("kkk")
                     if (res.data.user) {
                         sessionStorage.setItem("username", res.data.user.displayName)
                         sessionStorage.setItem("email", res.data.user.email)
